@@ -1,15 +1,62 @@
 <!DOCTYPE html>
 <html lang="ru-RU" prefix="og: https://ogp.me/ns#" itemtype="https://schema.org/Blog" itemscope>
+
 <head>
+    {% load static %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Блог. Главный сисадмин САО</title>
+    <link rel="stylesheet" href={% static 'css/style.css' %} type="text/css" media="all" />
+
+    <link rel="shortcut icon" href="css/images/favicon.ico" />
 </head>
+
 <body>
-    {% for post in post_list %}
-        <h3> {{ post.title }} </h3>
-        <p> {{ post.description }} </p>
-        {{ post.author }}
-    {% endfor %}
+    <div class="shell">
+        <div class="border">
+
+            <div id="navigation">
+                <ul>
+                    <li><a href="#" class="active">Главная</a></li>
+                    <li><a href="/admin">Админ панель</a></li>
+
+                </ul>
+            </div>
+
+            <div id="main">
+                <div id="content" class="left">
+
+                    <div class="projects">
+                        <h3>Записи</h3>
+                        {% for post in post_list %}
+                       
+                        <div class="item">
+                            <div class="image left">
+                                <a href="#"><img src=" {{post.img.url}} " alt="" /></a>
+                            </div>
+                            <div class="text left">
+                                <h4> {{ post.title }} </h4>
+                                <p> {{ post.description }} </p>
+                                <p> {{ post.author }} </p>
+                                
+                            </div>
+                            <div class="cl">&nbsp;</div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <div class="cl">&nbsp;</div>
+            </div>
+
+
+        </div>
+
+        <div id="footer">
+            <p class="copy right">Copyright &copy; 2022 </p>
+        </div>
+    </div>
+
 </body>
+
 </html>
