@@ -12,8 +12,8 @@ body {
 a { color: #ff0000; text-decoration: none; cursor:pointer; }
 a:hover { text-decoration: underline; }
 
-a img { border: 0; width: 100%; }
-
+a img { border: 0; width: 75%; }
+.post {width: 50%;}
 input, textarea, select { font-family: Arial, Helvetica, sans-serif; font-size:12px; }
 textarea { overflow:auto; }
 

@@ -27,22 +27,46 @@
                 <div id="content" class="left">
 
                     <div class="projects">
-                        <h3>Записи</h3>
-                        {% for post in post_list %}
-                       
+                        <h3> {{ post.title }} </h3>
+                        <p align="center">
+
+                            <a href="#"><img class="post" src=" {{post.img.url}} " /></a>
+
+                        </p>
+
                         <div class="item">
-                            <div class="image left">
-                                <a href="#"><img src=" {{post.img.url}} " alt="" /></a>
-                            </div>
+
                             <div class="text left">
-                                <h4> <a href="{{ post.id }}" >  {{ post.title }} </a></h4>
+                                <h4> </h4>
                                 <p> {{ post.description }} </p>
                                 <p> {{ post.author }} </p>
-                                
+
                             </div>
                             <div class="cl">&nbsp;</div>
                         </div>
-                        {% endfor %}
+
+                    </div>
+                </div>
+                <div class="form-coment">
+                    <h3> Оставить комментарий </h3>
+                    <div>
+                        <form action="#" method="post">
+                            <div>
+                                <label> Ваш комментарий </label>
+                                <textarea name="text_comments"></textarea>
+                            </div>
+                            <div>
+                                <label> Ваше имя * </label>
+                                <input type="text" name="name">
+                            </div>
+                            <div>
+                                <label> Ваш Email * </label>
+                                <input type="email" name="email">
+                            </div>
+                            <div>
+                                <input type="submit">
+                            </div>
+                        </form>
                     </div>
                 </div>
 
