@@ -21,6 +21,7 @@ class Comments(models.Model):
     name = models.CharField('Имя', max_length=50)
     text_comments = models.TextField('Текст комментария', max_length=2000)
     post = models.ForeignKey(Post, verbose_name='Публикация', on_delete=models.CASCADE)
+    
 
     def __str__(self):
         return f'{self.name}, {self.post}'
