@@ -1,13 +1,14 @@
 from django.shortcuts import render, redirect
 from django.views.generic.base import View
-from .models import Post
+from .models import Post, Comments
 from .form import CommentsForm
 
 class PostView( View ):
     """выводы записей"""
     def get( self, request ):
         posts = Post.objects.all()
-        return render(request, 'blog/blog.html', {'post_list': posts})
+        comment_count = Comments.objects.count()
+        return render(request, 'blog/blog.html', {'post_list': posts, 'commeent_list': comment_count})
 
 class PostDetail( View ):
     """ вывод записей """
@@ -24,3 +25,4 @@ class AddComments(View):
             form.post_id = pk
             form.save()
         return redirect( f'/{pk}')
+    
