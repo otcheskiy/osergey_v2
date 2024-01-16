@@ -8,7 +8,7 @@ class PostView( View ):
     def get( self, request ):
         posts = Post.objects.all()
         comment_count = Comments.objects.count()
-        return render(request, 'blog/blog.html', {'post_list': posts, 'commeent_list': comment_count})
+        return render(request, 'blog/blog.html', {'post_list': posts, 'comment_count': comment_count})
 
 class PostDetail( View ):
     """ вывод записей """

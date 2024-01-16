@@ -3,8 +3,8 @@ from .models import Post, Comments
 
 @admin.register(Post)
 class PostAdmin(admin.ModelAdmin):
-    list_display = ('title', 'author')
+    list_display = ('title', 'category', 'author')
 
 @admin.register(Comments)
 class CommentsAdmin(admin.ModelAdmin):
-    list_display = ('name', 'post')
+    list_display = ('post', 'name')

@@ -215,7 +215,7 @@
                                 </span>
                                 <span class="comments">
                                     <i class="fa fa-comments"></i>
-                                    {{commeent_list}}
+                                    {{comment_count}}
                                      
                                 </span>
                             </div>
@@ -224,10 +224,9 @@
                                     <a href="#"><img src=" {{post.img.url}} " alt="" /></a>
                                 </div>-->
 
-                            <h3> <a href="{{ post.id }}"> {{ post.title }} </a></h3>
+                            <h3> <a href="{{ post.id }}"> {{ post.title}} <p> {{ post.summory }} </p> </a>  </h3>
                             <a class="btn btn-base" href="{{ post.id }}">Читать</a>
-                            <!--<p> {{ post.description }} </p> -->
-
+                            
                             {% endfor %}
                             
 
